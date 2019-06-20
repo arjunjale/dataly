@@ -1,29 +1,24 @@
 package com.example.dataly;
 
 import android.os.Bundle;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
 import android.view.View;
-
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-
 import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
-
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.Menu;
+
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    //Testing github
+
+    private TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        tv = findViewById(R.id.test);
     }
 
     @Override
@@ -87,17 +83,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            tv.setText("home");
         } else if (id == R.id.nav_gallery) {
-
+            tv.setText("gallery");
         } else if (id == R.id.nav_slideshow) {
-
+            tv.setText("slideshow");
         } else if (id == R.id.nav_tools) {
-
+            tv.setText("nav tools");
         } else if (id == R.id.nav_share) {
-
+            tv.setText("nav share");
         } else if (id == R.id.nav_send) {
-
+            tv.setText("send");
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
